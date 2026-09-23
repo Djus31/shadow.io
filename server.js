@@ -2,7 +2,15 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+const CFG = require("./shared/config");
 const GameRoom = require("./shared/sim");
+
+if (process.env.BOT_FILL != null && process.env.BOT_FILL !== "") {
+  CFG.BOT_FILL = Math.max(0, parseInt(process.env.BOT_FILL, 10) || 0);
+}
+if (process.env.MAX_PLAYERS != null && process.env.MAX_PLAYERS !== "") {
+  CFG.MAX_PLAYERS = Math.max(1, parseInt(process.env.MAX_PLAYERS, 10) || 8);
+}
 
 const ROOT = __dirname;
 const PORT = Number(process.env.PORT || 8082);
@@ -157,7 +165,7 @@ function parseMode(mode) {
 function waitingRoom(mode) {
   const key = parseMode(mode);
   const list = roomsByMode[key];
-  let room = list.find((r) => r.state === "waiting");
+  let room = list.find((r) => r.state === "waiting" && r.players.size < CFG.MAX_PLAYERS);
   if (!room) {
     room = new GameRoom(key);
     room.lobbyLeft = 28;
