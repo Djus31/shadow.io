@@ -1,0 +1,32 @@
+=== Title ===
+SHADOW.io
+
+=== Short ===
+Hunt, raise a shadow army, slay Malakor.
+
+=== Short description ===
+Dark, fast .io: battle royale, raid, ×2 rush. Chests, armors, laser saber and pistol. Solo+bots, or real multi on a live server.
+
+=== Long description ===
+You drop as a hunter on a huge map. Open chests, swap weapons, raise shadows, outlast the zone.
+
+Three modes
+• Battle royale — last hunter standing.
+• Raid — killing Malakor at the center ends the match. The slayer wins.
+• Battle ×2 — the same hunt, double speed.
+
+Weapons & style
+Laser saber, katana, daggers, spear, maces, bow, bazooka, laser pistol. Armors, blades, shots and shadow trails unlock by playing. No signup: progress lives in your browser; a hunter code moves it to another device.
+
+Controls
+WASD move · Space attack · hold Space swap weapon · Shift dodge / sprint · R recall shadows · F merge · G duel.
+
+Phones
+On-screen stick and buttons.
+
+Solo / multi
+On this .io page: local match, bots fill empty slots.
+Shared games (humans + bots) need the live server link.
+
+Music: Émilio Rudoy — Instagram @emiliorudoy
+Game: SHADOW.io

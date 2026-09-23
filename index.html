@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SHADOW.io" />
+    <meta name="theme-color" content="#4a5260" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <title>SHADOW.io — Chasseurs & Ombres</title>
+    <link rel="stylesheet" href="css/style.css?v=99" />
+  </head>
+  <body data-decor="clair" class="theme-light">
+    <div id="menu">
+      <div class="menu-bg"></div>
+      <header class="brand">
+        <p class="sys" data-i18n="sys">[ SYSTÈME ] Chasse autorisée</p>
+        <h1>SHADOW<span>.io</span></h1>
+        <p id="speed-test" class="speed-test hidden">TEST · vitesse ×2</p>
+      </header>
+        <div class="hunter-bar">
+          <label class="name-field">
+            <span data-i18n="name">Nom</span>
+            <input id="hunter-name" maxlength="16" placeholder="Sung…" autocomplete="off" />
+          </label>
+          <section id="hunter-profile" class="hunter-profile"></section>
+        </div>
+        <div class="modes">
+        <button class="mode-card" data-mode="br" type="button">
+          <span class="mode-kicker" data-i18n="play">Jouer</span>
+          <strong data-i18n="brName">Bataille royale</strong>
+          <p data-i18n="brDesc">Dernier chasseur debout.</p>
+        </button>
+        <button class="mode-card" data-mode="raid" type="button">
+          <span class="mode-kicker" data-i18n="play">Jouer</span>
+          <strong data-i18n="raidName">Raid</strong>
+          <p data-i18n="raidDesc">Terrasse Malakor au centre pour gagner.</p>
+        </button>
+        <button class="mode-card" data-mode="rush" type="button">
+          <span class="mode-kicker" data-i18n="rushKicker">Fun</span>
+          <strong data-i18n="rushName">Bataille ×2</strong>
+          <p data-i18n="rushDesc">Vitesse double. Mode fun, un peu déjanté.</p>
+        </button>
+      </div>
+      <section id="pass-panel" class="pass-panel"></section>
+      <div class="hunter-code">
+        <p class="hunter-code-label" data-i18n="codeLabel">Code de transfert</p>
+        <p class="hunter-code-help" data-i18n="codeHelp">Copie ce code pour emporter ton nom, tes pts Style, tes skins et tes classes sur un autre appareil.</p>
+        <div class="hunter-code-row">
+          <input id="hunter-code" type="text" spellcheck="false" autocomplete="off" placeholder="SIO1.…" />
+          <button id="btn-code-copy" type="button" data-i18n="copy">Copier</button>
+          <button id="btn-code-import" type="button" data-i18n="import">Importer</button>
+        </div>
+        <p id="hunter-code-msg" class="hunter-code-msg"></p>
+      </div>
+      <section id="guide-bot" class="guide-bot">
+        <p class="sys-title" data-i18n="guideTitle">Assistant Système</p>
+        <div id="guide-log" class="guide-log"></div>
+        <div class="guide-chips">
+          <button type="button" data-guide="arme" data-i18n="chipWeapon">Meilleure arme</button>
+          <button type="button" data-guide="commandes" data-i18n="chipKeys">Commandes</button>
+          <button type="button" data-guide="skins" data-i18n="chipSkins">Skins</button>
+          <button type="button" data-guide="modes" data-i18n="chipModes">Modes</button>
+        </div>
+        <div class="guide-row">
+          <input id="guide-q" maxlength="160" placeholder="Question sur le jeu…" autocomplete="off" data-i18n="guidePh" data-i18n-attr="placeholder" />
+          <button id="guide-send" type="button" data-i18n="send">Envoyer</button>
+        </div>
+      </section>
+      <p class="hint" data-i18n="hint">ZQSD · Espace un coup (maintenu : change d’arme) · Shift esquive / sprint · R rappel · F fusion · G duel</p>
+      <div class="menu-actions">
+        <button id="btn-fs-menu" type="button">Plein écran</button>
+        <button id="btn-mute" type="button">Musique : ON</button>
+        <button id="btn-sfx" type="button">Bruits : ON</button>
+        <button id="btn-theme" type="button">Thème : CLAIR</button>
+        <button id="btn-lang" type="button">Langue : FR</button>
+      </div>
+      <p class="music-credit">Musique · Émilio Rudoy · insta: <a href="https://instagram.com/emiliorudoy" target="_blank" rel="noopener noreferrer">@emiliorudoy</a></p>
+    </div>
+
+    <div id="skin-peek" class="hidden">
+      <div class="skin-peek-card">
+        <p class="sys-title" data-i18n="peekTitle">Aperçu en partie</p>
+        <p id="skin-peek-title">Skin</p>
+        <p id="skin-peek-status"></p>
+        <canvas id="skin-peek-view" width="420" height="300"></canvas>
+        <div class="skin-peek-nav">
+          <button id="skin-peek-prev" type="button" data-i18n="prev">◀ Précédent</button>
+          <button id="skin-peek-next" type="button" data-i18n="next">Suivant ▶</button>
+        </div>
+        <div class="skin-peek-actions">
+          <button id="skin-peek-eq" type="button" data-i18n="equip">Équiper</button>
+          <button id="skin-peek-close" type="button" data-i18n="close">Fermer</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="lobby" class="overlay hidden">
+      <div class="panel">
+        <h2 id="lobby-title" data-i18n="lobbyWait">Portail en formation</h2>
+        <p id="lobby-count">8</p>
+        <ul id="lobby-list"></ul>
+      </div>
+    </div>
+
+    <div id="game" class="hidden">
+      <canvas id="view"></canvas>
+      <div id="vignette"></div>
+      <div id="hud">
+        <div id="top-controls">
+          <button id="btn-fs" type="button" tabindex="-1">Plein écran<span>Échap</span></button>
+          <button id="btn-theme-game" type="button" tabindex="-1">Thème : CLAIR</button>
+          <button id="btn-zoom-game" type="button" tabindex="-1">Zoom : ×1</button>
+        </div>
+        <div id="sys-window">
+          <p class="sys-title" id="sys-title" data-i18n="sysWin">FENÊTRE SYSTÈME</p>
+          <p id="hud-name" class="hidden"></p>
+          <p id="hud-class">Classe : Novice</p>
+          <p id="hud-power">Poings</p>
+          <p id="hud-lvl">Nv. 1</p>
+          <div class="bar" id="hp-bar"><i id="hp-fill"></i></div>
+          <p id="hud-hp">PV 480 / 480</p>
+          <div class="bar xp" id="xp-bar"><i id="xp-fill"></i></div>
+          <p id="hud-xp">XP 0 / 40</p>
+          <p id="hud-army">Ombres : 0</p>
+          <p id="hud-stance">Ombres : CHASSE</p>
+          <p id="hud-duel" class="hidden"></p>
+        </div>
+        <div id="hud-right">
+          <div id="timer"><span class="timer-label" data-i18n="barrier">Barrière</span> <span id="hud-time">--</span></div>
+          <div id="alive"><span class="alive-label" data-i18n="hunters">Chasseurs</span> <span id="hud-alive">0</span></div>
+          <canvas id="minimap" width="220" height="220"></canvas>
+          <ul id="radar-legend">
+            <li class="leg-you" data-i18n="you">Toi</li>
+            <li class="leg-hunter" data-i18n="hunter">Chasseur</li>
+            <li class="leg-portal" data-i18n="portal">Portail</li>
+            <li class="leg-boss" data-i18n="boss">Boss</li>
+            <li class="leg-malakor hidden" data-i18n="malakorMini">Malakor</li>
+          </ul>
+        </div>
+        <div id="boss-bar" class="hidden">
+          <span data-i18n="malakorBar">MALAKOR, SOUVERAIN DE L'ABÎME</span>
+          <div class="bar boss"><i id="boss-fill"></i></div>
+        </div>
+      </div>
+      <p id="duel-banner" class="hidden"></p>
+      <div id="alert" class="hidden">UN CHASSEUR AFFRONTE MALAKOR</div>
+      <div id="dead-ui" class="hidden">
+        <p id="spectate"><span data-i18n="dead">ÉLIMINÉ — observation</span> <span id="spec-name">…</span></p>
+        <p id="dead-pass" class="dead-pass hidden"></p>
+        <div class="dead-actions">
+          <button id="btn-spec-prev" type="button" data-i18n="prev">◀ Précédent</button>
+          <button id="btn-spec-next" type="button" data-i18n="next">Suivant ▶</button>
+          <button id="btn-restart" type="button" data-i18n="replay">Rejouer</button>
+          <button id="btn-dead-menu" type="button" data-i18n="menu">Retour au menu</button>
+        </div>
+      </div>
+      <div id="touch-move" aria-hidden="true"></div>
+      <div id="joy"><div id="stick"></div></div>
+      <div id="atk-wrap">
+        <button id="btn-attack" type="button">
+          <span class="atk-main" data-i18n="attack">ATTAQUE</span>
+          <span class="atk-swap" data-i18n="holdSwap">maintenir / changer d’arme</span>
+        </button>
+      </div>
+      <button id="btn-dodge" type="button">
+        <svg class="dodge-ring" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="dodge-track" cx="50" cy="50" r="46"></circle>
+          <circle class="dodge-fill" cx="50" cy="50" r="46"></circle>
+        </svg>
+        <span id="dodge-verb" data-i18n="dodge">ESQUIVE</span><span>SHIFT</span>
+      </button>
+      <button id="btn-merge" type="button"><span data-i18n="merge">FUSION</span><span>F</span></button>
+      <button id="btn-duel" type="button"><span data-i18n="duel">DUEL</span><span>G</span></button>
+      <button id="btn-recall" type="button"><span data-i18n="recall">RAPPEL</span><span>R</span></button>
+    </div>
+
+    <div id="end" class="overlay hidden">
+      <div class="panel">
+        <h2 id="end-title" data-i18n="endTitle">Partie terminée</h2>
+        <p id="end-sub"></p>
+        <div id="end-pass" class="end-pass hidden">
+          <p class="end-pass-kicker" data-i18n="passKicker">Style &amp; Légende</p>
+          <p id="end-pass-gain" class="end-pass-gain">+0 pts</p>
+          <p id="end-pass-rank" class="end-pass-rank"></p>
+          <div id="end-pass-bar" class="end-pass-bar"><i class="pass-bar-old" id="end-pass-old"></i><i class="pass-bar-gain" id="end-pass-fill"></i></div>
+          <p id="end-pass-next" class="end-pass-next"></p>
+          <ul id="end-pass-unlocks" class="end-pass-unlocks"></ul>
+        </div>
+        <ol id="end-board"></ol>
+        <div class="end-actions">
+          <button id="btn-end-restart" type="button" data-i18n="replay">Rejouer</button>
+          <button id="btn-menu" type="button" data-i18n="menu">Retour au menu</button>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bgm" src="audio/theme.mp3" loop preload="auto"></audio>
+    <script src="shared/config.js?v=74"></script>
+    <script src="js/i18n.js?v=13"></script>
+    <script src="shared/sim.js?v=79"></script>
+    <script src="js/sprites.js?v=33"></script>
+    <script src="js/profile.js?v=52"></script>
+    <script src="js/pass.js?v=67"></script>
+    <script src="js/sfx.js?v=19"></script>
+    <script src="js/decors.js?v=4"></script>
+    <script src="js/guide.js?v=20"></script>
+    <script src="js/render.js?v=95"></script>
+    <script src="js/client.js?v=95"></script>
+    <script>
+      if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
+        navigator.serviceWorker.register("sw.js?v=181");
+      }
+    </script>
+  </body>
+</html>

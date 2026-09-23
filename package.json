@@ -1,0 +1,12 @@
+{
+  "name": "shadow-io",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SHADOW.io — chasse .io, solo+bots ou multi Node",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

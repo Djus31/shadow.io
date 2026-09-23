@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SHADOW.io — page boutique</title>
+  <style>
+    :root { --bg:#07080c; --ink:#efe7d6; --gold:#e7c56a; --sys:#5ad4ff; --edge:#2a3344; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font: 18px/1.45 "Segoe UI", sans-serif; background: var(--bg); color: var(--ink); }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 28px 18px 80px; }
+    h1 { font-size: 42px; letter-spacing: .12em; margin: 0 0 8px; color: var(--gold); }
+    .tag { color: var(--sys); letter-spacing: .2em; font-size: 12px; font-weight: 700; }
+    .cover { width: 100%; border: 1px solid var(--edge); margin: 16px 0 24px; display: block; }
+    h2 { color: var(--gold); font-size: 20px; letter-spacing: .08em; margin: 32px 0 12px; }
+    p, li { color: #d5cbb8; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid img { width: 100%; border: 1px solid var(--edge); }
+    video { width: 100%; background: #000; border: 1px solid var(--edge); margin: 0 0 14px; }
+    .reel { width: 100%; aspect-ratio: 16/9; background: #000; border: 1px solid var(--edge); margin: 0 0 18px; overflow: hidden; }
+    .reel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .miss { padding: 28px; border: 1px dashed var(--edge); color: #8a8070; font-size: 14px; margin-bottom: 14px; }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="tag">[ SYSTÈME ] CHASSE AUTORISÉE</div>
+    <h1>SHADOW.io</h1>
+    <p>Chasse, lève une armée d’ombres, terrasse Malakor.</p>
+    <img class="cover" src="captures/couverture.png" alt="Couverture SHADOW.io" />
+
+    <h2>Bande-annonce</h2>
+    <video controls playsinline src="videos/00-bande-annonce.mp4" poster="captures/couverture.png"></video>
+
+    <h2>Les 3 modes</h2>
+    <video controls playsinline src="videos/01-bataille-royale.mp4" poster="captures/04-bataille-royale.png"></video>
+    <video controls playsinline src="videos/02-raid.mp4" poster="captures/02-raid.png"></video>
+    <video controls playsinline src="videos/03-bataille-x2.mp4" poster="captures/06-bataille-x2.png"></video>
+    <p><strong>Bataille royale</strong></p>
+    <div class="reel" data-reel="br"></div>
+    <p><strong>Raid</strong></p>
+    <div class="reel" data-reel="raid"></div>
+    <p><strong>Bataille ×2</strong></p>
+    <div class="reel" data-reel="rush"></div>
+    <p class="miss">Fichiers clips : <code>videos/01-bataille-royale.avi</code>, <code>02-raid.avi</code>, <code>03-bataille-x2.avi</code></p>
+
+    <h2>Le jeu</h2>
+    <p>Tu drops sur une carte immense. Coffres, armes, ombres, zone. Trois modes : bataille royale, raid (Malakor), bataille ×2.</p>
+    <ul>
+      <li>Espace = attaque · maintenir = changer d’arme</li>
+      <li>Téléphone : stick + boutons</li>
+      <li>Skins Style &amp; Légende sans inscription</li>
+    </ul>
+
+    <h2>Captures</h2>
+    <div class="grid">
+      <img src="captures/01-menu.png" alt="Menu" />
+      <img src="captures/04-bataille-royale.png" alt="Bataille royale" />
+      <img src="captures/02-raid.png" alt="Raid" />
+      <img src="captures/06-bataille-x2.png" alt="Bataille ×2" />
+      <img src="captures/12-zoom-armures.png" alt="Armures" />
+      <img src="captures/10-zoom-raid-malakor.png" alt="Malakor" />
+    </div>
+
+    <h2>Musique</h2>
+    <p>Émilio Rudoy — Instagram <a href="https://instagram.com/emiliorudoy" style="color:var(--sys)">@emiliorudoy</a></p>
+  </div>
+  <script>
+    var reels = {
+      br: ["captures/04-bataille-royale.png","captures/03-coffre-et-boss.png","captures/08-zoom-br-malakor.png","captures/09-zoom-br-miniboss.png"],
+      raid: ["captures/02-raid.png","captures/10-zoom-raid-malakor.png","captures/11-zoom-raid-tyran.png"],
+      rush: ["captures/06-bataille-x2.png","captures/07-bataille-x2.png","captures/12-zoom-armures.png"]
+    };
+    Object.keys(reels).forEach(function (k) {
+      var box = document.querySelector('[data-reel="'+k+'"]');
+      if (!box) return;
+      var img = document.createElement("img");
+      var i = 0;
+      img.src = reels[k][0];
+      img.alt = k;
+      box.appendChild(img);
+      setInterval(function () {
+        i = (i + 1) % reels[k].length;
+        img.src = reels[k][i];
+      }, 1400);
+    });
+  </script>
+</body>
+</html>

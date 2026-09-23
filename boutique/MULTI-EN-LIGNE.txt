@@ -1,0 +1,42 @@
+SHADOW.io — vrai multi (joueurs ensemble)
+
+------------------------------------------------
+A. Chez toi, ce soir (tes potes)
+------------------------------------------------
+1. Installe Node.js LTS : https://nodejs.org  (coche "Add to PATH")
+2. Dans le dossier shadow.io, double-clique start-online.bat
+3. Toi : ouvre http://127.0.0.1:8082
+4. Installe cloudflared :
+   https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/downloads/
+5. Autre fenêtre CMD :
+   cloudflared tunnel --url http://127.0.0.1:8082
+6. Envoie le lien https://….trycloudflare.com
+   Tout le monde ouvre CE lien (pas Itch, pas 8081).
+
+La fenêtre start-online.bat doit rester ouverte. PC éteint = multi coupé.
+S'il manque des humains, des bots remplissent jusqu'à 50.
+
+------------------------------------------------
+B. Multi 24/7 (Render, gratuit)
+------------------------------------------------
+1. Crée un compte GitHub, envoie le dossier shadow.io dans un dépôt.
+2. Va sur https://render.com → New → Web Service → ton dépôt.
+3. Runtime Node, Start command : node server.js
+   (ou importe render.yaml)
+4. Copie l'URL https://xxxxx.onrender.com
+5. Tous les joueurs ouvrent CETTE URL. Même salon, bots si places vides.
+
+Itch / Game Jolt / Netlify = HTML seul = chacun joue SEUL avec des bots.
+Pour que Itch rejoigne TON serveur Render, après déploiement :
+   dans shared/config.js, mets :
+   ONLINE_WS: "wss://xxxxx.onrender.com/ws",
+   puis re-uploade le jeu.
+   Ou partage : https://ton-itch/?ws=wss://xxxxx.onrender.com/ws
+
+Pour forcer solo+bots : ajoute ?local=1 à l'URL.
+
+------------------------------------------------
+C. Test
+------------------------------------------------
+Deux navigateurs (ou PC + téléphone) sur le MÊME lien 8082 / tunnel / Render.
+Même lobby, mêmes noms. Sinon tu es encore sur 8081 ou un .io statique.

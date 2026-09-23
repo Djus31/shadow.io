@@ -1,0 +1,6 @@
+node_modules/
+*.log
+.DS_Store
+boutique/videos/
+boutique/captures/*.mp4
+boutique/captures/sources-bande-annonce/

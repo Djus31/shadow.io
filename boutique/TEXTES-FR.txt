@@ -1,0 +1,38 @@
+=== ITCH / GAME JOLT — titre ===
+SHADOW.io
+
+=== Phrase courte ===
+Chasse, lève une armée d’ombres, terrasse Malakor.
+
+=== Description courte (140 car.) ===
+.io sombre et nerveux : bataille royale, raid, vitesse ×2. Coffres, armures, sabre et pistolet laser. Solo + bots, ou multi sur serveur.
+
+=== Description longue (colle ça sur la page) ===
+Tu es un chasseur. Tu drops sur une carte immense, tu ouvres des coffres, tu changes d’arme, tu lèves des ombres et tu survit à la zone.
+
+Trois modes
+• Bataille royale — dernier chasseur debout.
+• Raid — tuer Malakor au centre termine la partie : victoire pour celui qui l’abat.
+• Bataille ×2 — le même chaos, deux fois plus vite.
+
+Armes et style
+Sabre laser, katana, dagues, lance, masses, arc, bazooka, pistolet laser… Les skins (armures, lames, tirs, ombres) se débloquent en jouant. Pas de compte : ton profil reste dans le navigateur, tu peux l’emporter avec un code de transfert.
+
+Commandes
+ZQSD bouger · Espace attaquer · maintenir Espace changer d’arme · Shift esquive / sprint · R rappel des ombres · F fusion · G duel.
+
+Téléphone
+Stick + boutons. Le jeu est pensé tactile.
+
+Solo / multi
+Sur cette page .io : partie locale, bots si tu es seul.
+Le vrai mix joueurs + bots se joue sur le serveur (lien fourni par l’auteur, ou start-online.bat).
+
+Musique : Émilio Rudoy — Instagram @emiliorudoy
+Jeu : SHADOW.io
+
+=== Tags ===
+.io, action, battle-royale, raid, boss, shadows, french, html5, multiplayer, bots
+
+=== Classification ===
+Violence cartoon / arcade. Pas d’histoire gore. Convient ado+.
