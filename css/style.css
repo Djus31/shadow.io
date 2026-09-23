@@ -2202,15 +2202,28 @@ textarea {
   body.is-fs #hud-right,
   #game:fullscreen #hud-right,
   #game:-webkit-full-screen #hud-right {
-    width: min(272px, 38vw);
-    max-width: 42vw;
+    width: min(140px, 26vw);
+    max-width: 30vw;
   }
 
   body.is-fs #minimap,
   #game:fullscreen #minimap,
   #game:-webkit-full-screen #minimap {
-    width: min(272px, 38vw, calc(100dvh - 220px));
-    height: min(272px, 38vw, calc(100dvh - 220px));
+    width: min(128px, 26vw, calc(100dvh - 280px));
+    height: min(128px, 26vw, calc(100dvh - 280px));
+  }
+
+  body.is-fs #atk-wrap,
+  body.is-fs #btn-dodge,
+  body.is-fs #btn-merge,
+  body.is-fs #btn-duel,
+  body.is-fs #btn-recall,
+  #game:fullscreen #atk-wrap,
+  #game:fullscreen #btn-dodge,
+  #game:fullscreen #btn-merge,
+  #game:fullscreen #btn-duel,
+  #game:fullscreen #btn-recall {
+    z-index: 60;
   }
 }
 
