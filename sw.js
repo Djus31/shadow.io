@@ -1,4 +1,4 @@
-const CACHE = "shadowio-app-v184";
+const CACHE = "shadowio-app-v185";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(self.skipWaiting());
