@@ -705,6 +705,7 @@
       const can = !!s.merge;
       mergeBtn.classList.toggle("ready", can);
       mergeBtn.disabled = !can || !!s.spectate;
+      mergeBtn.innerHTML = t("merge") + "<span>F</span>";
     }
     document.getElementById("hud-alive").textContent = s.alive + " / " + s.total;
     const zst = s.zst;

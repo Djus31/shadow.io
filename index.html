@@ -11,7 +11,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-192.png" />
     <title>SHADOW.io — Chasseurs & Ombres</title>
-    <link rel="stylesheet" href="css/style.css?v=99" />
+    <link rel="stylesheet" href="css/style.css?v=101" />
   </head>
   <body data-decor="clair" class="theme-light">
     <div id="menu">
@@ -173,7 +173,7 @@
         </svg>
         <span id="dodge-verb" data-i18n="dodge">ESQUIVE</span><span>SHIFT</span>
       </button>
-      <button id="btn-merge" type="button"><span data-i18n="merge">FUSION</span><span>F</span></button>
+      <button id="btn-merge" type="button"><span id="merge-verb" data-i18n="merge">FUSION</span><span>F</span></button>
       <button id="btn-duel" type="button"><span data-i18n="duel">DUEL</span><span>G</span></button>
       <button id="btn-recall" type="button"><span data-i18n="recall">RAPPEL</span><span>R</span></button>
     </div>
@@ -209,10 +209,10 @@
     <script src="js/decors.js?v=4"></script>
     <script src="js/guide.js?v=20"></script>
     <script src="js/render.js?v=95"></script>
-    <script src="js/client.js?v=95"></script>
+    <script src="js/client.js?v=96"></script>
     <script>
       if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost" || location.hostname === "127.0.0.1")) {
-        navigator.serviceWorker.register("sw.js?v=181");
+        navigator.serviceWorker.register("sw.js?v=183");
       }
     </script>
   </body>

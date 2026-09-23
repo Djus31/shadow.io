@@ -1159,7 +1159,7 @@ textarea {
 #btn-dodge {
   pointer-events: auto;
   position: absolute;
-  right: 128px;
+  right: 172px;
   bottom: 148px;
   width: 88px;
   height: 88px;
@@ -1974,9 +1974,9 @@ textarea {
   .hint,
   #btn-fs span,
   #btn-dodge > span:not(#dodge-verb),
-  #btn-merge span,
-  #btn-duel span,
-  #btn-recall span {
+  #btn-merge span:not(#merge-verb),
+  #btn-duel span:not(#duel-verb),
+  #btn-recall span:not(#recall-verb) {
     display: none !important;
   }
 
@@ -2104,7 +2104,7 @@ textarea {
   }
 
   #btn-dodge {
-    right: 80px;
+    right: 118px;
     bottom: calc(122px + env(safe-area-inset-bottom));
     width: 56px;
     height: 56px;
@@ -2166,7 +2166,7 @@ textarea {
   body.is-fs #btn-dodge,
   #game:fullscreen #btn-dodge,
   #game:-webkit-full-screen #btn-dodge {
-    right: 106px;
+    right: 148px;
     bottom: calc(118px + env(safe-area-inset-bottom));
     width: 70px;
     height: 70px;
